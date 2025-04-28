@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <title>Gelen Mesajlar</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
+</head>
+<body>
+  <h1>Gelen Mesajlar</h1>
+  <table border="1" cellpadding="5">
+    <tr>
+      <th>#</th><th>Ad Soyad</th><th>Telefon</th><th>E-posta</th><th>Mesaj</th><th>Tarih</th>
+    </tr>
+    {% for r in rows %}
+    <tr>
+      <td>{{ r.id }}</td>
+      <td>{{ r.first_name }} {{ r.last_name }}</td>
+      <td>{{ r.phone }}</td>
+      <td>{{ r.email }}</td>
+      <td>{{ r.message|replace('\n','<br>')|safe }}</td>
+      <td>{{ r.submitted_at.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

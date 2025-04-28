@@ -1,0 +1,57 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    border:0 ;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul.menu {
+    background: black;
+    height: 50px;
+}
+
+ul.menu >li{
+    padding-left: 500px;
+    float: left;
+    position: relative;
+}
+
+ul.menu >li >a{
+    display: block;
+    font-size: 14px;
+    color: #fff;
+    padding: 0 15px;
+    line-height: 50px;
+    border-right: 1px solid #fff;
+}
+
+ul.menu ul {
+    background: black;
+    width: 200px;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    opacity: 0;
+    transition: 250ms all;
+    visibility: hidden;
+}
+
+ul.menu ul li a {
+    display: block;
+    padding: 7px 12px;
+    color: #fff;
+    font-size: 14px;
+}
+
+ul.menu >li:hover ul{
+    opacity: 1;
+    visibility: visible;
+    top: 50px;
+}
+
+

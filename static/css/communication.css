@@ -1,0 +1,129 @@
+/****************************************
+  İletişim Sayfası Genel Stilleri
+*****************************************/
+.contact-page {
+  padding-top: 100px; /* Sabit menü (70px) nedeniyle boşluk */
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+/****************************************
+  3 Sütunlu İletişim Bilgileri
+*****************************************/
+.contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.column {
+  flex: 1 1 250px;
+  background: #fff9e6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  min-width: 250px;
+}
+
+.column h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #b89118;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.column p {
+  color: #333;
+}
+
+/****************************************
+  Harita Container
+*****************************************/
+.map-container {
+  margin-top: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 250px;
+  border: 0;
+}
+
+/****************************************
+  Bize Ulaşın Formu Bölümü
+*****************************************/
+.contact-form-section {
+  background: #f7f7f7;
+  max-width: 600px;
+  margin: 0 auto 4rem;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.contact-form-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form-section input,
+.contact-form-section textarea {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form-section button {
+  padding: 0.75rem;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form-section button:hover {
+  background: orange;
+}
+
+/****************************************
+  Responsive Düzenlemeler
+*****************************************/
+@media (max-width: 768px) {
+  .contact-details {
+    flex-direction: column;
+    align-items: center;
+  }
+  .column {
+    max-width: 500px;
+    width: 100%;
+    margin: 1rem 0;
+  }
+}

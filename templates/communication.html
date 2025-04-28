@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/static/css/common.css">
+  <link rel="stylesheet" href="/static/css/communication.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+  <title>Fatih Metal Ferforje - İletişim</title>
+</head>
+<body>
+  <header>
+    <nav class="menu">
+      <div id="logo">
+        <a href="home_page.html"><img src="/static/img/FMF logo.png" alt="Logo"></a>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <ul class="menu-items">
+        <li><a href="home_page.html">Anasayfa</a></li>
+        <li><a href="photos.html">Resimler</a></li>
+        <li>
+          <a href="products.html">Ürünlerimiz <i class="fas fa-caret-down"></i></a>
+          <ul class="submenu">
+            <li><a href="#">Paneller</a></li>
+            <li><a href="#">Cumbalar</a></li>
+            <li><a href="#">Motifler</a></li>
+            <li><a href="#">Baba Demirler</a></li>
+            <li><a href="#">Parçalar</a></li>
+          </ul>
+        </li>
+        <li><a href="referances.html">Referanslar</a></li>
+        <li><a href="communication.html" class="active">İletişim</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contact-page">
+    <section class="contact-form-section">
+      <h2>Bize Ulaşın</h2>
+      <form action="/templates/contact.html" method="post">
+        <input type="text" name="first_name" placeholder="Adınız" required>
+        <input type="text" name="last_name" placeholder="Soyadınız" required>
+        <input type="tel" name="phone" placeholder="Telefonunuz" required>
+        <input type="email" name="email" placeholder="E-Posta" required>
+        <textarea name="message" placeholder="Mesajınız" rows="5" required></textarea>
+        <button type="submit">Gönder</button>
+      </form>
+    </section>
+
+    <h1>İletişim</h1>
+    <div class="contact-details">
+      <div class="column">
+        <h2>Bizi Arayın</h2>
+        <ul><li>Ana Hat: <strong>+90 (532) 302 1310</strong></li></ul>
+      </div>
+      <div class="column">
+        <h2>E-posta</h2>
+        <p><strong>fatihmetalferforje@gmail.com</strong></p>
+      </div>
+      <div class="column">
+        <h2>Adres</h2>
+        <p>Dudullu OSB, 114. Sk DES Sanayi Sitesi C18 Blok No:50,<br>34776 Ümraniye/İstanbul</p>
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24087.706241058233!2d29.180497199999998!3d41.0041769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cacf4fe61b38f1%3A0xe57f1158ee147cb2!2sFMF%20Fatih%20Metal%20Ferforje%20San.%20Tic.Ltd.!5e0!3m2!1str!2str!4v1744163593462!5m2!1str!2str" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Çelik Metal</h3>
+        <ul>
+          <li><a href="home_page.html">Anasayfa</a></li>
+          <li><a href="photos.html">Resimler</a></li>
+          <li><a href="products.html">Ürünlerimiz</a></li>
+          <li><a href="referances.html">Referanslar</a></li>
+          <li><a href="communication.html">İletişim</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Ürünler</h3>
+        <ul><li><a href="#">Paneller</a></li><li><a href="#">Cumbalar</a></li><li><a href="#">Motifler</a></li><li><a href="#">Baba Demirler</a></li><li><a href="#">Parçalar</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h3>Hizmetler</h3>
+        <ul><li><a href="#">İmalat</a></li><li><a href="#">Kaplama</a></li><li><a href="#">Tasarım & Kalıp</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h3>Bize Ulaşın</h3>
+        <p>Dudullu OSB, C18 Blok No:50,<br>34776 Ümraniye/İstanbul</p>
+        <p><a href="tel:+905323021310">+90 (532) 302 1310</a></p>
+        <p><a href="mailto:fatihmetalferforje@gmail.com">fatihmetalferforje@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Fatih Metal Ferforje. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <script src="/static/javascript/lightbox.js"></script>
+</body>
+</html>

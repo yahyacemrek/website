@@ -1,0 +1,260 @@
+/* home_page.css */
+
+/* — Genel Düzen — */
+.home_page {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+}
+
+/* — Hero Bölümü — */
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* Slider Ayarları */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+.slide {
+  min-width: 100%;
+  height: 100%;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 10s ease;
+}
+.slides .slide:hover img {
+  transform: scale(1.1);
+}
+
+/* Gradient Overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.2) 40%, transparent 70%);
+  z-index: 1;
+}
+
+/* Slider Butonları */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s;
+  z-index: 2;
+}
+.prev { left: 1rem; }
+.next { right: 1rem; }
+.prev:hover, .next:hover {
+  background: rgba(255,255,255,0.6);
+}
+
+/* Overlay Metin */
+.hero-overlay {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 0.5rem;
+}
+.hero-overlay h1 {
+  font-size: 3.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+.hero-overlay p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+.cta-btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  background: #ff7f00;
+  color: #fff;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: background 0.3s, transform 0.2s;
+}
+.cta-btn:hover {
+  background: #e06b00;
+  transform: translateY(-3px);
+}
+
+/* — Scroll‑Down İkonu — */
+.scroll-down {
+  position: absolute;
+  bottom: 2rem; left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: bounce 2s infinite;
+}
+.scroll-down i {
+  font-size: 2rem;
+  color: #fff;
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+  40% { transform: translate(-50%, -15px); }
+  60% { transform: translate(-50%, -7px); }
+}
+
+/* — Bölüm Ayırıcı “Wave” — */
+.section-separator {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+svg.wave {
+  display: block;
+  width: 100%;
+  height: 60px;
+}
+
+/* — Neden Bizi Seçmelisiniz? — */
+.why-choose-us {
+  padding: 4rem 2rem;
+  background: #f7f7f7;
+  text-align: center;
+}
+.why-choose-us .content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.why-choose-us h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.why-choose-us p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+.why-choose-us .features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.why-choose-us .feature {
+  flex: 1 1 30%;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.why-choose-us .feature:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.why-choose-us .feature i {
+  font-size: 2.5rem;
+  color: orange;
+  margin-bottom: 0.5rem;
+}
+.why-choose-us .feature h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.why-choose-us .feature p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* — Hizmetlerimiz — */
+.services {
+  padding: 4rem 2rem;
+  background: #fff;
+  text-align: center;
+}
+.services .content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.services h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.services p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+.services .service-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.services .service {
+  flex: 1 1 30%;
+  background: #f7f7f7;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.services .service:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.services .service i {
+  font-size: 2.5rem;
+  color: orange;
+  margin-bottom: 0.5rem;
+}
+.services .service h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.services .service p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* — Responsive — */
+@media (max-width: 768px) {
+  .hero-overlay h1 { font-size: 2.4rem; }
+  .hero-overlay p  { font-size: 1rem; }
+  .cta-btn { font-size: 1rem; }
+  .scroll-down { bottom: 1.5rem; }
+  .why-choose-us, .services { padding: 3rem 1rem; }
+  .why-choose-us .features, .services .service-list {
+    flex-direction: column;
+  }
+  .why-choose-us .feature, .services .service {
+    flex: 1 1 100%;
+  }
+}

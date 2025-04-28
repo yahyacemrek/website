@@ -1,0 +1,9 @@
+<!-- /img/wave.svg -->
+<svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+  <!--
+    M0,50            => Soldan 50px aşağı
+    C360,-50 1080,150 1440,50  => Kontrol noktalarıyla ters dalga
+    L1440,0 L0,0 Z  => Yukarıyı (y=0) doldur
+  -->
+  <path fill="#f7f7f7" d="M0,50 C360,-50 1080,150 1440,50 L1440,0 L0,0 Z"/>
+</svg>

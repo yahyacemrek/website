@@ -1,0 +1,14 @@
+.referances {
+    padding-top: 100px;
+    text-align: center;
+}
+.referances h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+.referances-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1em;
+    line-height: 1.6;
+}
