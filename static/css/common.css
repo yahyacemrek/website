@@ -12,6 +12,10 @@ a {
   color: inherit;
 }
 
+html, body {
+  font-family: 'Roboto', sans-serif;
+}
+
 /* — Menü / Header — */
 .menu {
   background: rgba(0, 0, 0, 0.5);
@@ -233,26 +237,34 @@ a {
 }
 
 @media (max-width: 768px) {
-  /* Alt menü konteynerine kaydırma ekle */
+  /* Alt menüyü akışın parçası yap, statik pozisyona al */
   .menu-items li ul {
-    /* zaten tanımlı olan: */
-    max-height: 80vh;
+    position: static !important;
+    display: block !important;
+    max-height: 0;             /* başlangıçta kapalı */
     overflow: hidden;
-    transition: max-height 0.4s ease;
-    /* eklenecekler: */
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch; /* iOS momentum scroll */
+    transition: max-height 0.3s ease;
   }
 
-  .menu-items li.submenu-open ul {
-    max-height: 500px;
-    /* overflow-y: auto; zaten üstte ayarlandı */
+  /* submenu-open geldiğinde, akışta genişleyip alt öğeleri aşağı iter */
+  .menu-items li.submenu-open > ul {
+    max-height: 60vh;          /* ihtiyaç halinde artırabilirsiniz */
   }
 
-  /* Eğer tüm mobil menüde kaydırma istiyorsanız */
-  .menu-items {
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+  /* Alt menü öğeleri dikey olarak sıralansın */
+  .menu-items li ul li {
+    width: 100%;
+  }
+  .menu-items li ul li a {
+    display: block;
+    padding: 12px 20px;
+  }
+
+  .menu-items.menu-items--open {
+    max-height: calc(100vh - 70px);     /* header (70px) çıkarıldı */
+    overflow-y: auto !important;        /* dikey scroll */ 
+    -webkit-overflow-scrolling: touch;  /* iOS momentum scroll */
   }
 }
+
 
