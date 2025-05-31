@@ -18,7 +18,7 @@
 .slider {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 115vh;
 }
 .slides {
   display: flex;
@@ -26,8 +26,8 @@
   height: 100%;
 }
 .slide {
-  min-width: 101%;
-  height: 110%;
+  min-width: 100%;
+  height: 100%;
 }
 
 .slide img {
