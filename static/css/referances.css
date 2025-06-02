@@ -12,3 +12,68 @@
     font-size: 1em;
     line-height: 1.6;
 }
+
+/* referances.css’in en altına ekleyin */
+
+/* ► Slider Bölümü Stil Kuralları ◄ */
+
+.slider-section {
+  max-width: 800px;      /* Slider’ın yatayda en fazla 800px genişlikte olması için */
+  margin: 2rem auto;     /* Sayfa ortalanması (üst-alt boşluk 2rem) */
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-container {
+  width: 100%;           /* .slider-section’ın genişliğini doldurur (en fazla 800px) */
+  height: 300px;         /* Slider yüksekliği 300px */
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* Resmin kapsayıcıya tam oturması için */
+}
+
+/* Önceki / Sonraki (Prev/Next) Butonları */
+.prev-slide,
+.next-slide {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  z-index: 5;
+}
+
+.prev-slide { left: 1rem; }
+.next-slide { right: 1rem; }
+
+.prev-slide:hover,
+.next-slide:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* ► İsteğe Bağlı: Küçük Ekranlarda Yüksekliği Azalt ◄ */
+@media (max-width: 768px) {
+  .slider-container {
+    height: 250px;  /* Mobilde slider’ı biraz daha kısa göstermek için */
+  }
+}

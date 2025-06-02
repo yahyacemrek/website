@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.querySelector('.hamburger');
+  const btn  = document.querySelector('.hamburger');
   const menu = document.querySelector('.menu-items');
   const nav  = document.querySelector('.menu');
 
@@ -11,34 +11,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Menü aç/kapat işlevi
   btn.addEventListener('click', () => {
+    // "hamburger--open" sınıfını hamburger ikonuna ekle/çıkar
     const isOpen = btn.classList.toggle('hamburger--open');
-    menu.classList.toggle('menu-items--open', isOpen);
+
+    // NAV etiketine "open" sınıfını ekle/çıkar
+    // CSS'te .menu.open .menu-items { display: flex; } olmalı
+    nav.classList.toggle('open', isOpen);
+
+    // ARIA-expanded durumunu güncelle
     btn.setAttribute('aria-expanded', isOpen);
   });
 
-  // Menü dışına tıklayınca kapatma
-  document.addEventListener('click', (e) => {
-    if (!nav.contains(e.target) && menu.classList.contains('menu-items--open')) {
-      btn.classList.remove('hamburger--open');
-      menu.classList.remove('menu-items--open');
-      btn.setAttribute('aria-expanded', 'false');
-    }
-  });
-
-  // Scroll ile arka plan opaklığı (debounce)
-  let timer;
-  window.addEventListener('scroll', () => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      nav.classList.toggle('menu--scrolled', window.scrollY > 50);
-    }, 50);
-  });
-
-  // Mobile: "Ürünlerimiz" menüsündeki oka tıklayınca alt menüyü aç/kapat
+  // Mobilde "Ürünlerimiz" alt menüsündeki oka tıklayınca alt menüyü aç/kapat
   document.querySelectorAll('.menu-items li > a .fa-caret-down').forEach(caret => {
     caret.addEventListener('click', e => {
       if (window.innerWidth <= 768) {
-        e.preventDefault();  // açılır linkin sayfayı kaydırmasını engelle
+        e.preventDefault(); // Açılır linkin sayfanın yukarısına kaydırmasını engelle
         const parentLi = caret.closest('li');
         parentLi.classList.toggle('submenu-open');
       }

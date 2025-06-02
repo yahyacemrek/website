@@ -1,261 +1,260 @@
 /* home_page.css */
 
-/* — Genel Düzen — */
+/* — Genel Düzenleme — */
 .home_page {
   position: relative;
-  font-family: 'Montserrat', sans-serif;
   min-height: 100vh;
+  overflow-x: hidden;
+  padding-top: 70px; /* Menü yüksekliği kadar boşluk */
 }
 
-/* — Hero Bölümü — */
-.hero {
-  position: relative;
-  overflow: hidden;
-  min-height: 100vh;
-}
-
-/* Slider Ayarları */
-.slider {
+/* — HERO / SLIDER BÖLÜMÜ — */
+.hero-slider {
   position: relative;
   width: 100%;
-  height: 115vh;
+  height: 70vh;
+  min-height: 400px;
+  overflow: hidden;
+  margin-bottom: 2rem;
 }
-.slides {
+
+.home-page-slider {
+  width: 100%;
+  height: 100%;
+}
+
+.home-page-slider .slides {
   display: flex;
   transition: transform 0.5s ease-in-out;
   height: 100%;
 }
-.slide {
+
+.home-page-slider .slide {
   min-width: 100%;
   height: 100%;
 }
 
-.slide img {
+.home-page-slider .slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 10s ease;
-}
-.slides .slide:hover img {
-  transform: scale(1.1);
 }
 
-/* Gradient Overlay */
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.2) 40%, transparent 70%);
-  z-index: 1;
-}
-
-/* Slider Butonları */
-.prev, .next {
+/* — Prev / Next Butonları — */
+.prev-home-slide,
+.next-home-slide {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.2);
+  background: rgba(0, 0, 0, 0.4);
   color: #fff;
   border: none;
-  font-size: 2rem;
-  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.75rem;
   cursor: pointer;
-  border-radius: 50%;
-  transition: background 0.3s;
-  z-index: 2;
-}
-.prev { left: 1rem; }
-.next { right: 1rem; }
-.prev:hover, .next:hover {
-  background: rgba(255,255,255,0.6);
+  border-radius: 4px;
+  z-index: 5;
 }
 
-/* Overlay Metin */
-.hero-overlay {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  text-align: center;
-  color: #fff;
-  padding: 1rem 2rem;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 0.5rem;
+.prev-home-slide {
+  left: 1rem;
 }
-.hero-overlay h1 {
-  font-size: 3.2rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
+
+.next-home-slide {
+  right: 1rem;
 }
-.hero-overlay p {
-  font-size: 1.25rem;
+
+.prev-home-slide:hover,
+.next-home-slide:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 768px) {
+  .hero-slider {
+    height: 50vh; /* Mobilde daha kısa */
+  }
+  .prev-home-slide,
+  .next-home-slide {
+    font-size: 1.25rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+/* — HAKKIMIZDA BÖLÜMÜ — */
+.about {
+  padding: 4rem 0;
+  background-color: #f9f9f9;
+}
+
+.about .container h2 {
+  font-size: 2rem;
   margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.about .container p {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+}
+
+.about-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.about-cards .card {
+  background-color: #fff;
+  flex: 1;
+  min-width: 260px;
+  max-width: 320px;
+  padding: 2rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.about-cards .card i {
+  margin-bottom: 1rem;
+  color: #ff7f00;
+}
+
+.about-cards .card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-cards .card p {
+  font-size: 0.95rem;
+  color: #555;
   line-height: 1.4;
 }
-.cta-btn {
-  display: inline-block;
-  padding: 0.8rem 1.8rem;
-  background: #ff7f00;
-  color: #fff;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  border-radius: 4px;
-  transition: background 0.3s, transform 0.2s;
-}
-.cta-btn:hover {
-  background: #e06b00;
-  transform: translateY(-3px);
+
+/* — HİZMETLERİMİZ BÖLÜMÜ — */
+.services-overview {
+  padding: 4rem 0;
 }
 
-/* — Scroll‑Down İkonu — */
-.scroll-down {
-  position: absolute;
-  bottom: 2rem; left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  animation: bounce 2s infinite;
-}
-.scroll-down i {
+.services-overview .container h2 {
   font-size: 2rem;
-  color: #fff;
-}
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
-  40% { transform: translate(-50%, -15px); }
-  60% { transform: translate(-50%, -7px); }
-}
-
-/* — Bölüm Ayırıcı “Wave” — */
-.section-separator {
-  display: block;
-  width: 100%;
-  margin: 0;
-}
-svg.wave {
-  display: block;
-  width: 100%;
-  height: 60px;
-}
-
-/* — Neden Bizi Seçmelisiniz? — */
-.why-choose-us {
-  padding: 4rem 2rem;
-  background: #f7f7f7;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
-.why-choose-us .content {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.why-choose-us h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-.why-choose-us p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #555;
-}
-.why-choose-us .features {
+
+.services-list {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
   gap: 2rem;
-}
-.why-choose-us .feature {
-  flex: 1 1 30%;
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.why-choose-us .feature:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-.why-choose-us .feature i {
-  font-size: 2.5rem;
-  color: orange;
-  margin-bottom: 0.5rem;
-}
-.why-choose-us .feature h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-.why-choose-us .feature p {
-  font-size: 1rem;
-  color: #666;
+  justify-content: center;
 }
 
-/* — Hizmetlerimiz — */
-.services {
-  padding: 4rem 2rem;
-  background: #fff;
+.service-item {
+  background-color: #fff;
+  flex: 1;
+  min-width: 260px;
+  max-width: 320px;
+  padding: 2rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
-.services .content {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.services h2 {
-  font-size: 2.5rem;
+
+.service-item i {
+  color: #ff7f00;
   margin-bottom: 1rem;
-  color: #333;
-}
-.services p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #555;
-}
-.services .service-list {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-.services .service {
-  flex: 1 1 30%;
-  background: #f7f7f7;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.services .service:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-.services .service i {
-  font-size: 2.5rem;
-  color: orange;
-  margin-bottom: 0.5rem;
-}
-.services .service h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-.services .service p {
-  font-size: 1rem;
-  color: #666;
 }
 
-/* — Responsive — */
+.service-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.service-item p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.service-item .learn-more {
+  font-size: 0.95rem;
+  color: #ff7f00;
+  font-weight: 500;
+}
+
+.service-item .learn-more:hover {
+  text-decoration: underline;
+}
+
+/* — PORTFÖY ÖRNEKLERİ — */
+.home-portfolio {
+  padding: 4rem 0;
+  background-color: #f9f9f9;
+}
+
+.home-portfolio .container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.home-portfolio .container p {
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.portfolio-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.portfolio-gallery img {
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* — VİZYONUMUZ — */
+.vision {
+  padding: 4rem 0;
+}
+
+.vision .container h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.vision-list {
+  max-width: 800px;
+  margin: 0 auto;
+  list-style: disc inside;
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  padding-left: 1rem;
+}
+
+/* — RESPONSIVE DÜZENLEMELER — */
 @media (max-width: 768px) {
-  .hero-overlay h1 { font-size: 2.4rem; }
-  .hero-overlay p  { font-size: 1rem; }
-  .cta-btn { font-size: 1rem; }
-  .scroll-down { bottom: 1.5rem; }
-  .why-choose-us, .services { padding: 3rem 1rem; }
-  .why-choose-us .features, .services .service-list {
+  .about-cards,
+  .services-list {
     flex-direction: column;
   }
-  .why-choose-us .feature, .services .service {
-    flex: 1 1 100%;
+  .portfolio-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+  .vision-list {
+    padding-left: 0.5rem;
   }
 }
