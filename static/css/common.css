@@ -79,18 +79,19 @@ a:hover {
 ---------------------------------------- */
 
 header {
-  background-color: #222;
+  background-color: rgba(34, 34, 34, 0.7); /* %30 saydam siyah */
   position: sticky;
   top: 0;
   z-index: 1000;
 }
+
 .menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 0.5rem;
 }
 #logo img {
   height: 50px;

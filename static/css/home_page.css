@@ -4,24 +4,30 @@
 .home_page {
   position: relative;
   min-height: 100vh;
-  overflow-x: hidden;
-  padding-top: 70px; /* Menü yüksekliği kadar boşluk */
 }
 
 /* — HERO / SLIDER BÖLÜMÜ — */
 .hero-slider {
-  position: relative;
+  position: relative  ;
   width: 100%;
-  height: 70vh;
+  height: 100vh;
   min-height: 400px;
   overflow: hidden;
   margin-bottom: 2rem;
+  margin-top: -73px; /* Yaklaşık header yüksekliği */
+  z-index: 0;
 }
 
 .home-page-slider {
   width: 100%;
   height: 100%;
 }
+.home-page-slider .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
 .home-page-slider .slides {
   display: flex;
@@ -29,7 +35,19 @@
   height: 100%;
 }
 
+.home-page-slider .slide::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Opaklığı %30 olan siyah overlay */
+  pointer-events: none;
+}
+
 .home-page-slider .slide {
+  position: relative;
   min-width: 100%;
   height: 100%;
 }
